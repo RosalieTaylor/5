@@ -1,0 +1,26 @@
+#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+void setup() {
+    lcd.begin(16, 2);
+}
+
+void loop() {
+    int value1 = analogRead(A0);
+    int value2 = analogRead(A1);
+    int value3 = analogRead(A2);
+    lcd.setCursor(0, 0);
+    lcd.print("Value 1:");
+    lcd.setCursor(0, 1);
+    lcd.print(value1);
+    lcd.setCursor(7, 0);
+    lcd.print("Value 2:");
+    lcd.setCursor(7, 1);
+    lcd.print(value2);
+    lcd.setCursor(14, 0);
+    lcd.print("Value 3:");
+    lcd.setCursor(14, 1);
+    lcd.print(value3);
+    delay(1000);
+}
